@@ -1,0 +1,38 @@
+public class salaarioBruNet {
+
+	public static void main(String[] args) throws IOException {
+		String nombre;
+		int mes;
+		int año;
+		double salBrut;
+		double salNeto;
+		double ventasMes;
+		int horasExtra;
+		String tipoEmpleado;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		System.out.println("Intoduce el nombre");
+		nombre = br.readLine();
+        
+		System.out.println("Intoduce el mes en forma de numero (del 1 al 12): ");
+		System.out.println("Intoduce el año");
+		año = Integer.parseInt(br.readLine());
+		
+		System.out.println("Intoduce las ventas al mes");
+		ventasMes = (double)Integer.parseInt(br.readLine());
+		
+		System.out.println("Intoduce las horas extra");
+		horasExtra = Integer.parseInt(br.readLine());
+		
+		System.out.println("Intoduce el tipo de empleado: vendedor o encargado:");
+		tipoEmpleado = br.readLine();
+        
+		salBrut = calculaSalarioBruto(tipoEmpleado, ventasMes, horasExtra);
+		salNeto = calculaSalarioNeto(salBrut);
+		
+		System.out.println("El salario bruto de " + nombre + " es: "+ salBrut);
+		System.out.println("El salario neto de " + nombre + " es: "+ salNeto);
+		
+
+	}
